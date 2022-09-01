@@ -8,7 +8,7 @@
     "url": "https://github.com/aha-develop/github"
   },
   "dependencies": {
-    "@aha-app/aha-develop-react": "^1.0.0",
+    "@aha-app/aha-develop-react": "^1.3.1",
     "gql-tag": "^1.0.1"
   },
   "type": "module",

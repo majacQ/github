@@ -61,7 +61,7 @@ export const PrPage: React.FC<{ repos: string[] }> = ({ repos }) => {
           style={{ justifyContent: "center", alignItems: "center" }}
         >
           <aha-button onClick={() => fetchData()} kind="primary">
-            Authenticate with Github
+            Authenticate with GitHub
           </aha-button>
         </section>
       </div>
@@ -73,7 +73,7 @@ export const PrPage: React.FC<{ repos: string[] }> = ({ repos }) => {
       <div className="page-nav">
         <div className="page-nav__row  page-nav__row--justify-left page-nav__row--align-top">
           <div className="page-nav__cell">
-            <h1>Github Pull Requests</h1>
+            <h1>GitHub pull requests</h1>
           </div>
         </div>
       </div>

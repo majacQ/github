@@ -1,8 +1,8 @@
-import React, { useMemo } from "react";
-import GithubSearchQuery from "@lib/github/GithubSearchQuery";
-import { useGithubApi } from "@lib/useGithubApi";
-import { PrTableWithQuery } from "@components/PrTable";
-import BranchTable from "./BranchTable";
+import React, { useMemo } from 'react';
+import GithubSearchQuery from '@lib/github/GithubSearchQuery';
+import { useGithubApi } from '@lib/useGithubApi';
+import { PrTableWithQuery } from '@components/PrTable';
+import BranchTable from './BranchTable';
 
 export const PrPage: React.FC<{ repos: string[] }> = ({ repos }) => {
   const { authed, error, fetchData } = useGithubApi(async () => {});
@@ -16,21 +16,21 @@ export const PrPage: React.FC<{ repos: string[] }> = ({ repos }) => {
 
   if (authed) {
     sections = (
-      <div className="sections">
+      <div className='sections'>
         <section>
           <h2>My pull requests</h2>
 
-          <div className="subsection">
+          <div className='subsection'>
             <h3>Open</h3>
             <PrTableWithQuery
-              query={baseQuery.is("pr").author("@me").state("open").toQuery()}
+              query={baseQuery.is('pr').author('@me').state('open').toQuery()}
             />
           </div>
 
-          <div className="subsection">
+          <div className='subsection'>
             <h3>Closed</h3>
             <PrTableWithQuery
-              query={baseQuery.is("pr").author("@me").state("closed").toQuery()}
+              query={baseQuery.is('pr').author('@me').state('closed').toQuery()}
             />
           </div>
         </section>
@@ -45,23 +45,23 @@ export const PrPage: React.FC<{ repos: string[] }> = ({ repos }) => {
   } else if (error) {
     sections = (
       <div
-        className="sections"
-        style={{ justifyContent: "center", alignItems: "center" }}
+        className='sections'
+        style={{ justifyContent: 'center', alignItems: 'center' }}
       >
-        <section className="error">
+        <section className='error'>
           <p>An error occurred</p>
         </section>
       </div>
     );
   } else {
     sections = (
-      <div className="sections" style={{ justifyContent: "center" }}>
+      <div className='sections' style={{ justifyContent: 'center' }}>
         <section
-          className="auth-prompt"
-          style={{ justifyContent: "center", alignItems: "center" }}
+          className='auth-prompt'
+          style={{ justifyContent: 'center', alignItems: 'center' }}
         >
-          <aha-button onClick={() => fetchData()} kind="primary">
-            Authenticate with Github
+          <aha-button onClick={() => fetchData()} kind='primary'>
+            Authenticate with GitHub
           </aha-button>
         </section>
       </div>
@@ -69,11 +69,11 @@ export const PrPage: React.FC<{ repos: string[] }> = ({ repos }) => {
   }
 
   return (
-    <div className="page">
-      <div className="page-nav">
-        <div className="page-nav__row  page-nav__row--justify-left page-nav__row--align-top">
-          <div className="page-nav__cell">
-            <h1>Github Pull Requests</h1>
+    <div className='page'>
+      <div className='page-nav'>
+        <div className='page-nav__row  page-nav__row--justify-left page-nav__row--align-top'>
+          <div className='page-nav__cell'>
+            <h1>GitHub pull requests</h1>
           </div>
         </div>
       </div>

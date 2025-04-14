@@ -102,7 +102,7 @@
       },
       "endpoints": {
         "webhook": {
-          "title": "Webhook from Github",
+          "title": "Webhook from GitHub",
           "entryPoint": "src/webhooks/webhook.ts",
           "public": true
         }

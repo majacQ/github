@@ -32,7 +32,7 @@ aha.on({ event: 'aha-develop.github.pr.labeled' }, async ({ record, payload }) =
 
    - In Aha! go to Settings -> Account -> Extensions -> GitHub -> Contributions -> Webhook from Github. Copy the hidden URL.
 
-   - In GitHub go to each repo that you want to integrate with Aha!. In Settings -> Webhook create a new webhook. The payload URL is the URL you copied from the extension. The content type should be `application/json`. Select the following individual events: Branch or tag creation, Check runs, Pull requests, Pull request reviews, Pushes, Statuses. Enable the webhook.
+   - In GitHub go to each repo that you want to integrate with Aha!. In Settings -> Webhook create a new webhook. The payload URL is the URL you copied from the extension. The content type should be `application/json`. Select the following individual events: Branch or tag creation, Check runs, Pull requests, Pull request reviews, Pushes, Statuses, Workflow runs. Enable the webhook.
 
     - Instead of doing this at the repo level, it is also possible to create an organization-wide webhook that wil work for all repos.
 

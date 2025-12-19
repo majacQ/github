@@ -65,7 +65,7 @@ export const EmptyState: React.FC<{ record: LinkableRecord }> = ({
   };
 
   const pasteLink = async (url: string) => {
-    if (!validPrUrl(url)) {
+    if (!await validPrUrl(url)) {
       setValidation("Please enter a valid pull request URL");
       return;
     }

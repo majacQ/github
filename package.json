@@ -32,6 +32,15 @@
           "array": true,
           "description": "List of the GitHub repositories that should be searched for related pull requests. e.g. 'rails/rails'."
         },
+        "useEnterprise": {
+          "title": "Use GitHub Enterprise Server",
+          "scope": [
+            "account"
+          ],
+          "type": "boolean",
+          "default": false,
+          "description": "Enable to connect to GitHub Enterprise Server instead of GitHub.com"
+        },
         "serverUrl": {
           "title": "GitHub server URL",
           "scope": [

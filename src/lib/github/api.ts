@@ -1,5 +1,6 @@
 import { TypedDocumentNode } from "@graphql-typed-document-node/core";
 import { DocumentNode } from "graphql";
+import { IDENTIFIER } from "extension";
 
 /**
  * Wrap the github provided graphql function in a function that accepts a
@@ -24,7 +25,12 @@ function toFetch(token: string) {
     const payload: any = { query };
     if (variables) payload.variables = variables;
 
-    const response = await fetch("https://api.github.com/graphql", {
+    const serverUrl = await aha.settings.get(`${IDENTIFIER}.serverUrl`);
+    const apiUrl = !serverUrl || serverUrl === "https://github.com"
+      ? "https://api.github.com/graphql"
+      : `${serverUrl}/api/graphql`;
+
+    const response = await fetch(apiUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

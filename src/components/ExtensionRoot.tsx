@@ -11,9 +11,9 @@ export const ExtensionRoot: React.FC<{}> = ({ children }) => {
 
   useEffect(() => {
     async function determineService() {
-      const clientId = await aha.settings.get(`${IDENTIFIER}.oauthClientId`);
+      const useEnterprise = await aha.settings.get(`${IDENTIFIER}.useEnterprise`);
 
-      if (clientId) {
+      if (useEnterprise) {
         setServiceName("github_enterprise");
       } else {
         setServiceName("github");

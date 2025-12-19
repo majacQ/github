@@ -12,6 +12,10 @@ const settingsGet = jest.fn();
 };
 
 describe("validPrUrl", () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
   it("successed for valid urls", async () => {
     expect(
       await validPrUrl("https://github.com/example/project/pull/1")

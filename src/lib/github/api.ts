@@ -1,6 +1,6 @@
 import { TypedDocumentNode } from "@graphql-typed-document-node/core";
 import { DocumentNode } from "graphql";
-import { IDENTIFIER } from "extension";
+import { IDENTIFIER } from "../../extension";
 
 /**
  * Wrap the github provided graphql function in a function that accepts a

@@ -1,25 +1,13 @@
 import { AuthProvider } from "@aha-app/aha-develop-react";
 import React, { useState, useEffect } from "react";
 import { Styles } from "./Styles";
-import { IDENTIFIER } from "extension";
+import { determineService } from "../lib/determineService";
 
-/**
- * Set up the styles and auth provider
- */
 export const ExtensionRoot: React.FC<{}> = ({ children }) => {
   const [serviceName, setServiceName] = useState(null as null | string);
 
   useEffect(() => {
-    async function determineService() {
-      const useEnterprise = await aha.settings.get(`${IDENTIFIER}.useEnterprise`);
-
-      if (useEnterprise) {
-        setServiceName("github_enterprise");
-      } else {
-        setServiceName("github");
-      }
-    }
-    determineService();
+    determineService().then(setServiceName);
   }, []);
 
   if (!serviceName) return null;

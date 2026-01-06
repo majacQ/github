@@ -13,7 +13,7 @@ const AddLink: Aha.CommandExtension<{ record: LinkableRecord }> = async ({
     placeholder: "Enter the URL to a pull request",
   });
 
-  if (!validPrUrl(prUrl)) {
+  if (!await validPrUrl(prUrl)) {
     throw new Error("Please enter a valid pull request URL");
   }
 
